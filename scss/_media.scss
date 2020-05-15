@@ -1,0 +1,72 @@
+
+@include sm {
+    .f_l {
+        float: none;
+        width: 100%;
+    }
+    .header {
+        position: static;
+        text-align: center;
+    
+        ul {
+            display: block;
+        }
+
+    }
+
+    .home {
+        .container-home {
+            h1 {
+                font-size: 30px;
+            }
+        }
+    }
+
+    .service {
+        padding-bottom: 0;
+        .service-parent {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    .portfolio {
+        .port-item {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .get-touch {
+        .touch {
+            display: block;
+        }
+    }
+}
+
+@include xs {
+    .service {
+        padding-bottom: 0px;
+        .service-parent {
+            grid-template-columns: 1fr;
+        }
+    }
+    .portfolio {
+        .port-item {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@include md {
+    // .header {
+    //     ul {
+    //         li {
+    //             padding: 10px 10px;
+    //             font-size: 12px;
+    //         }
+    //     }
+    // }
+}
+
+@include lg {
+    
+}

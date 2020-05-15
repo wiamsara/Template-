@@ -1,0 +1,299 @@
+@import "variable";
+@import "mixin";
+@import "extend";
+
+body {
+    font-family: Merriweather, "Helvetica neue", Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+/*Start Header*/
+.black {
+    background-color: rgba(0,0,0,0.5);
+    height: 80px;
+}
+.header {
+    overflow: hidden;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+
+    .logo {
+        @extend .f_l;
+
+        h2 {
+            color: #c9c7c6;
+        }
+    }
+    ul {
+       @extend .f_l;
+       display: flex;
+
+       li {
+        list-style: none;
+        padding: 10px 27px;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        a {
+            color: #c9c7c6;
+            text-decoration: none;
+            @include Trans;
+
+            &:hover {
+                color: $primaryColor;
+            }
+        }
+       }
+    }
+}
+/*End Header*/
+
+/*Start Home*/
+.home {
+    background: $home_bg;
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .overlay {
+        position: absolute;
+        background-color:black;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        opacity: 0.5;
+    }
+    .container-home {
+        position: relative;
+        z-index: 3;
+
+        h1 {
+            font-size: 50px;
+            text-transform: uppercase;
+            color:#FFF;
+        }
+
+        hr {
+            width: 60px;
+            color: $primaryColor;
+        }
+
+        p{
+           @extend .p;
+        }
+
+        button {
+            @extend .button;
+            color: #FFF;
+            background-color: $primaryColor;
+
+            &:hover {
+                background-color: #FFF;
+                color: $primaryColor;
+            }
+        }
+    }
+}
+/*End Home*/
+
+/*Start Need*/
+.need {
+    text-align: center;
+    background-color: $primaryColor;
+    padding: 1px 0 50px 0;
+
+    h3 {
+        @extend .h3;
+        color: #FFF;
+    }
+
+    hr {
+        width: 60px;
+        color: #FFF;
+    }
+
+    p {
+        @extend .p;
+    }
+
+    button {
+        @extend .button;
+        color: $primaryColor;
+        background-color: #FFF;
+
+        &:hover {
+            color: #FFF;
+            background-color: $secondaryColor;
+        }
+    }
+}
+/*End Need*/
+
+/*Start Service*/
+.service {
+    text-align: center;
+    padding-bottom: 50px;
+
+    .service-parent {
+        padding-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+
+        i {
+            color: $primaryColor;
+        }
+
+        h4 {
+            color: #414a4f;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        p {
+            @extend .p;
+            color: #7F7D7C;
+        }
+    }
+
+    h3 {
+        @extend .h3;
+        color: $secondaryColor;
+    }
+
+    hr {
+        width: 60px;
+        color: $primaryColor;
+    }
+}
+/*End Service*/
+
+/*Start Portfolio*/
+.portfolio {
+
+    h3 {
+        @extend .h3;
+        color: $secondaryColor;
+        text-align: center;
+    }
+
+    hr {
+        width: 60px;
+        color: $primaryColor;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .port-item {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        text-align: center;
+
+
+        div {
+
+            img {
+                width: 80%;
+                height: 80%;
+                box-shadow: #EEE 10px 15px;
+            }
+        }
+    }
+    
+}
+/*End Portfolio*/
+
+/*Start Download*/
+.download {
+    background-color: $secondaryColor;
+    text-align: center;
+    padding: 1px 0 80px 0;
+
+    h3 {
+        @extend .h3;
+        color: #FFF;
+    }
+
+    button {
+        @extend .button;
+        color: $secondaryColor;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: $primaryColor;
+            color: #FFF;
+        }
+    }
+}
+/*End Download*/
+/*Start Get Touch*/
+.get-touch {
+    text-align: center;
+
+    h3 {
+        @extend .h3;
+        color: $secondaryColor;
+    }
+
+    hr {
+        color: $primaryColor;
+        width: 60px;
+    }
+
+    p {
+        @extend .p;
+        color: #7F7D7C
+    }
+
+    .touch {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 50px;
+
+        .item {
+            margin: 10px 100px;
+            i {
+                display: block;
+                color: $primaryColor;
+                padding: 20px 0 30px 0;
+            }
+
+            span {
+                @extend .p;
+                font-weight: bold;
+                color: #7F7D7C;
+
+                a {
+                    color: #7F7D7C;
+                    text-decoration: none;
+                    
+                    &:hover {
+                        color: $primaryColor;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+}
+/*End Get Touch*/
+@import "media";
